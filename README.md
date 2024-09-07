@@ -1,4 +1,20 @@
-# FilmsphereAngularInterface
+# Filmsphere Angular Client
+
+This is the Angular frontend version of the Filmsphere Movie Database. Users can register, log in, see all movies, see various movie details, view their account details, add and remove movies to and from their list of favorite movies and log out.
+
+## Used technologies
+
+- Angular
+- Angular Material
+- JavaScript
+- HTML
+- CSS/SCSS
+
+## Link to the live version
+
+The online hosted version of this app can be found here: [MyFlix Angular Client](https://schlumen.github.io/myflix-angular-client)
+
+# Technical information
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
 
