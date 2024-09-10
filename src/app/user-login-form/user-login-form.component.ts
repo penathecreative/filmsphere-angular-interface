@@ -3,7 +3,19 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-
+/*/**
+ * Component responsible for handling user authentication, including login functionality.
+ *
+ * Provides a login form that authenticates users. On success:
+ * - Stores user info and token in `localStorage`.
+ * - Redirects to the movies page.
+ * - Shows a success message.
+ * On failure:
+ * - Displays an error message.
+ * - Logs the error to the console.
+ *
+ * Includes dialogs for user interaction and snack bars for notifications.
+ */
 @Component({
   selector: 'app-user-login-form',
   templateUrl: './user-login-form.component.html',
@@ -20,7 +32,19 @@ export class UserLoginFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
-
+  /**
+   * Handles user login by sending the form inputs to the backend.
+   * On successful login:
+   * - Closes the dialog.
+   * - Stores user information and token in `localStorage`.
+   * - Displays a success message in a snack bar.
+   * - Redirects the user to the movies page.
+   * On failure:
+   * - Logs the error to the console.
+   * - Displays a failure message in a snack bar.
+   *
+   * @returns {void}
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe(
       (result) => {

@@ -2,7 +2,13 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+/**
+ * Component for user registration.
+ *
+ * Provides a form to register new users. Handles form submission,
+ * shows success or error messages, and manages modal dialogs.
+ *
+ */
 @Component({
   selector: 'app-user-registration-form',
   templateUrl: './user-registration-form.component.html',
@@ -22,6 +28,11 @@ export class UserRegistrationFormComponent implements OnInit {
   /**
    * Logic to register user
    * This is the function responsible for sending the form inputs to the backend
+   *
+   * On success: closes the modal and shows a success message.
+   * On failure: displays an error message.
+   *
+   * @returns {void}
    */
 
   registerUser(): void {

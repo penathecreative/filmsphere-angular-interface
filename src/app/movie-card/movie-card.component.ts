@@ -3,9 +3,13 @@ import { FetchApiDataService } from '../fetch-api-data.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Movie } from '../models'; // Import the Movie interface
+import { Movie } from '../models';
 import { DialogComponent } from '../dialog/dialog.component';
-
+/**
+ * Component representing a card for movies.
+ * Displays a list of movies and allows users to toggle favorites,
+ * show genre, director, and movie details.
+ */
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
@@ -22,6 +26,10 @@ export class MovieCardComponent {
     public snackBar: MatSnackBar
   ) {}
 
+  /**
+   * Angular lifecycle method for component initialization.
+   * Fetches movies and favorite movies on initialization.
+   */
   ngOnInit(): void {
     this.getMovies();
     this.getFavoriteMovies();
@@ -46,8 +54,8 @@ export class MovieCardComponent {
   }
 
   /**
-   * Get all movies from API
-   * @returns movies
+   * Fethes all movies from API
+   * @returns {void}
    */
 
   getMovies(): void {
@@ -58,8 +66,8 @@ export class MovieCardComponent {
   }
 
   /**
-   * Get users favorite movies
-   * @returns favouriteMovies
+   * Fetches users favorite movies from the API
+   * @returns @returns {void}
    */
 
   getFavoriteMovies(): void {
@@ -71,10 +79,10 @@ export class MovieCardComponent {
   }
 
   /**
-   * Add or remove movie from favorite list
-   * @param id
+   * Toggles a movie's favorite status.
+   * Adds or removes the movie from the user's favorite list.
+   * @param {string} id - The ID of the movie to toggle.
    */
-
   toggleFavorite(id: string): void {
     if (this.favoriteMovies.includes(id)) {
       // Remove from favorites
@@ -103,6 +111,11 @@ export class MovieCardComponent {
     }
   }
 
+  /**
+   * Opens a dialog displaying the genre of a movie.
+   * @param {Movie} movie - The movie whose genre will be shown.
+   */
+
   showGenre(movie: Movie): void {
     this.dialog.open(DialogComponent, {
       data: {
@@ -113,6 +126,11 @@ export class MovieCardComponent {
     });
   }
 
+  /**
+   * Opens a dialog displaying the director details of a movie.
+   * @param {Movie} movie - The movie whose director details will be shown.
+   */
+
   showDirector(movie: Movie): void {
     this.dialog.open(DialogComponent, {
       data: {
@@ -122,6 +140,10 @@ export class MovieCardComponent {
       width: '400px',
     });
   }
+  /**
+   * Opens a dialog displaying details about a movie.
+   * @param {Movie} movie - The movie whose details will be shown.
+   */
 
   showDetail(movie: Movie): void {
     this.dialog.open(DialogComponent, {
@@ -132,7 +154,9 @@ export class MovieCardComponent {
       width: '400px',
     });
   }
-
+  /**
+   * Redirects the user to their profile page.
+   */
   redirectProfile(): void {
     this.router.navigate(['profile']);
   }

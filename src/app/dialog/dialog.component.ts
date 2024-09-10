@@ -1,4 +1,3 @@
-// src/app/info-dialog/info-dialog.component.ts
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 

@@ -1,5 +1,3 @@
-// src/app/models/models.ts
-
 // Define the Genre interface
 export interface Genre {
   Name: string;
